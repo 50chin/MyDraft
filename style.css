@@ -2,8 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-body {
   font-family: Golos Text;
 }
 
@@ -23,8 +21,26 @@ button {
   font-weight: 700;
 }
 
+.media_display {
+  overflow: hidden;
+}
+
 .red_line {
   text-decoration: line-through 2px solid rgb(245, 73, 50);
+}
+
+.line {
+  display: flex;
+  animation: running-line 15s linear infinite;
+}
+
+@keyframes running-line {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .header__logo {
@@ -42,39 +58,22 @@ button {
   text-transform: uppercase;
 }
 .hero {
-  top: -90px;
   position: relative;
-  margin: 0 auto;
   background-image: url(./src/img/back.webp);
   background-position: center;
   background-repeat: no-repeat;
   max-width: 1920px;
   width: 100%;
-  height: 880px;
+  height: 684px;
   overflow: hidden;
 }
 
-.hero__line {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  transform: translateY(-50%);
-  animation: running-line 15s linear infinite;
-}
-
-@keyframes running-line {
-  0% {
-    transform: translateX(0) translateY(-50%);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-50%);
-  }
-}
-
 .hero__content {
-  top: 214px;
-  position: absolute;
   max-width: 542px;
+  height: 684px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero__title {
@@ -141,7 +140,7 @@ button {
 }
 
 .donut {
-  padding: 0 0 64px;
+  padding: 80px 0 64px;
 }
 
 .donut__content {
@@ -274,6 +273,7 @@ th {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   width: 40px;
   height: 40px;
   border-radius: 60px;
