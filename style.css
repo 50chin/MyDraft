@@ -48,7 +48,7 @@ button {
   background-image: url(./src/img/back.webp);
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 1366px;
+  max-width: 1920px;
   width: 100%;
   height: 880px;
   overflow: hidden;
@@ -107,7 +107,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Golos Text;
   box-sizing: border-box;
   border: 2px solid rgb(31, 31, 31);
   border-radius: 66px;
@@ -184,7 +183,7 @@ table {
   width: max-content;
   border-collapse: collapse;
   border: 2px solid white;
-  margin: 40px 0 40px;
+  margin: 32px 0 20px;
   max-width: 700px;
   width: 100%;
 }
@@ -223,16 +222,19 @@ th {
 }
 
 .stage__title {
+  position: relative;
   max-width: 800px;
   color: rgb(49, 49, 49);
   font-family: Merriweather;
   font-size: 54px;
   font-weight: 400;
-  line-height: 120%;
   text-transform: uppercase;
 }
 
 .stage__link {
+  position: absolute;
+  margin-left: 20px;
+  bottom: 10px;
   text-transform: none;
   text-decoration: none;
   font-weight: 400;
@@ -244,29 +246,13 @@ th {
   display: grid;
   gap: 20px;
   grid-template-areas:
-    "first second third"
-    "fourth fifth third"
-    "sixth seventh seventh";
-}
-
-.second {
-  grid-area: second;
-}
-.first {
-  grid-area: first;
+    '. . third'
+    '. . third'
+    '. seventh seventh';
 }
 
 .third {
   grid-area: third;
-}
-.fourth {
-  grid-area: fourth;
-}
-.fifth {
-  grid-area: fifth;
-}
-.sixth {
-  grid-area: sixth;
 }
 .seventh {
   grid-area: seventh;
@@ -298,8 +284,158 @@ th {
 }
 .stage__card-text {
   max-width: 300px;
-  font-family: Golos Text;
   font-size: 20px;
   font-weight: 500;
   line-height: 120%;
+}
+
+.participants {
+  padding: 200px 0 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.participants__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.participants__title {
+  color: rgb(49, 49, 49);
+  font-family: Merriweather;
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.participants__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.participants__position {
+  padding: 0 15px;
+}
+
+.participants__btn-left,
+.participants__btn-right {
+  margin: 0 auto;
+  border: 2px solid rgb(255, 255, 255);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgb(49, 49, 49);
+}
+
+.participants__btn-left:hover,
+.participants__btn-right:hover {
+  background: rgb(251, 206, 81);
+}
+
+.participants__btn-disabled {
+  background: rgb(214, 214, 214);
+  margin: 0 auto;
+  border: 2px solid rgb(255, 255, 255);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.participants__wrapper {
+  overflow: hidden;
+}
+
+.participants__cards {
+  width: 2444px;
+  display: flex;
+  justify-content: space-between;
+  transition-duration: 1s;
+  margin-top: 60px;
+}
+
+.participants__number {
+  color: rgb(49, 49, 49);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.participants__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.participants__card-img {
+  width: 320px;
+  height: 320px;
+}
+
+.participants__card-text {
+  text-align: center;
+  color: rgb(49, 49, 49);
+  margin: 28px 0 20px;
+}
+.participants__card-name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.participants__card-description {
+  margin-top: 6px;
+  opacity: 0.6;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+.participants__card-btn {
+  color: rgb(48, 87, 162);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0px;
+  text-align: left;
+  padding: 12px;
+  border: 1px solid rgb(48, 87, 162);
+  border-radius: 62px;
+}
+
+.participants__card-btn:hover {
+  background: rgb(48, 87, 162);
+  color: rgb(255, 255, 255);
+}
+
+.participants__line {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  animation: running-bottom-line 15s linear infinite;
+}
+
+@keyframes running-bottom-line {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer {
+  background: rgb(233, 222, 212);
+  padding: 40px 72px;
+}
+
+.footer__text {
+  color: rgb(49, 49, 49);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  opacity: 0.6;
 }
