@@ -10,6 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./src/img/favicon_io/favicon-16x16.png"
+    />
     <script src="./app.js" defer></script>
     <title>Клуб четырех коней</title>
   </head>
@@ -45,10 +51,10 @@
             </p>
             <div class="hero__button">
               <button class="hero__btn-left hero__btn">
-                Поддержать <br />шахматную мысль
+                <span class="hero__btn-text">Поддержать шахматную мысль</span>
               </button>
               <button class="hero__btn-right hero__btn">
-                Подробнее <br />о турнире
+                <span class="hero__btn-text"> Подробнее о турнире</span>
               </button>
             </div>
           </div>
@@ -66,12 +72,22 @@
           <div class="donut__content">
             <div class="donut__text">
               <p>
-                Чтобы поддержать Международный васюкинский турнир посетите
-                лекцию на тему:
+                Чтобы поддержать Международный васюкинский турнир
+                <img
+                  src="./src/img/donut/img.webp"
+                  srcset="
+                    ./src/img/donut/img.webp    1x,
+                    ./src/img/donut/img@2x.webp 2x
+                  "
+                  alt=""
+                  class="donut__img-mob"
+                />
+                посетите лекцию на тему:
                 <span class="red_words">«Плодотворная дебютная идея»</span>
               </p>
             </div>
             <img
+              class="donut__img"
               src="./src/img/donut/img.webp"
               srcset="
                 ./src/img/donut/img.webp    1x,
@@ -87,6 +103,7 @@
         <div class="container">
           <div class="about__content">
             <img
+              class="about__img"
               src="./src/img/about/person.webp"
               srcset="
                 ./src/img/about/person.webp    1x,
@@ -127,9 +144,27 @@
                   </th>
                 </tr>
               </table>
-              <a href="#" class="about__link"
-                >По всем вопросам обращаться в администрацию к К. Михельсону</a
-              >
+              <div class="about__table-mob">
+                <p class="about__table-text">Место проведения:</p>
+                <p class="about__table-subtext">Клуб «Картонажник»</p>
+                <p class="about__table-text">Дата и время мероприятия</p>
+                <p class="about__table-subtext">22 июня 1927 г. в 18:00</p>
+                <p class="about__table-text">Стоимость входных билетов:</p>
+                <p class="about__table-subtext">20 коп.</p>
+                <p class="about__table-text">Плата за игру:</p>
+                <p class="about__table-subtext">50 коп.</p>
+                <p class="about__table-text">Взнос на телеграммы:</p>
+                <p class="about__table-subtext" style="border-bottom: none">
+                  <span class="red_line">100 руб.</span>&nbsp;&nbsp;21 руб. 16
+                  коп.
+                </p>
+              </div>
+              <div class="about__link">
+                <a href="#"
+                  >По всем вопросам обращаться в администрацию к К.
+                  Михельсону</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -138,64 +173,133 @@
       <section class="stage">
         <div class="container">
           <div class="stage__text">
-            <h2 class="stage__title">
-              Этапы преображения Васюков
-              <a class="stage__link" href="#"
-                >Будущие источники <br />обогащения васюкинцев</a
-              >
-            </h2>
+            <h2 class="stage__title">Этапы преображения Васюков</h2>
+            <a class="stage__link" href="#"
+              >Будущие источники обогащения васюкинцев</a
+            >
           </div>
-          <div class="stage__cards">
-            <div class="stage__card">
-              <p class="stage__card-num">1</p>
-              <p class="stage__card-text">
-                Строительство железнодорожной магистрали Москва-Васюки
-              </p>
-            </div>
-            <div class="stage__card">
-              <p class="stage__card-num">2</p>
-              <p class="stage__card-text">
-                Открытие фешенебельной гостиницы «Проходная пешка» и других
-                небоскрёбов
-              </p>
-            </div>
-            <div class="stage__card third">
-              <p class="stage__card-num">3</p>
-              <p class="stage__card-text">
-                Поднятие сельского хозяйства в радиусе на тысячу километров:
-                производство овощей, фруктов, икры, шоколадных конфет
-              </p>
-            </div>
-            <div class="stage__card">
-              <p class="stage__card-num">4</p>
-              <p class="stage__card-text">Строительство дворца для турнира</p>
-            </div>
-            <div class="stage__card">
-              <p class="stage__card-num">5</p>
-              <p class="stage__card-text">
-                Размещение гаражей для гостевого автотранспорта
-              </p>
-            </div>
-            <div class="stage__card">
-              <p class="stage__card-num">6</p>
-              <p class="stage__card-text">
-                Постройка сверхмощной радиостанции для передачи всему миру
-                сенсационных результатов
-              </p>
-            </div>
-            <div class="stage__card seventh">
-              <p class="stage__card-num">7</p>
-              <p class="stage__card-text" style="max-width: 412px">
-                Создание аэропорта «Большие Васюки» с регулярным отправлением
-                почтовых самолётов и дирижаблей во все концы света, включая
-                Лос-Анжелос и Мельбурн
-              </p>
+          <div class="stage__wrapper">
+            <div class="stage__cards">
+              <div class="stage__card">
+                <p class="stage__card-num">1</p>
+                <p class="stage__card-text">
+                  Строительство железнодорожной магистрали Москва-Васюки
+                </p>
+              </div>
+              <div class="stage__card">
+                <p class="stage__card-num">2</p>
+                <p class="stage__card-text">
+                  Открытие фешенебельной гостиницы «Проходная пешка» и других
+                  небоскрёбов
+                </p>
+              </div>
+              <div class="stage__card third">
+                <p class="stage__card-num">3</p>
+                <p class="stage__card-text">
+                  Поднятие сельского хозяйства в радиусе на тысячу километров:
+                  производство овощей, фруктов, икры, шоколадных конфет
+                </p>
+              </div>
+              <div class="stage__card">
+                <p class="stage__card-num">4</p>
+                <p class="stage__card-text">Строительство дворца для турнира</p>
+              </div>
+              <div class="stage__card">
+                <p class="stage__card-num">5</p>
+                <p class="stage__card-text">
+                  Размещение гаражей для гостевого автотранспорта
+                </p>
+              </div>
+              <div class="stage__card">
+                <p class="stage__card-num">6</p>
+                <p class="stage__card-text">
+                  Постройка сверхмощной радиостанции для передачи всему миру
+                  сенсационных результатов
+                </p>
+              </div>
+              <div class="stage__card seventh">
+                <p class="stage__card-num">7</p>
+                <p class="stage__card-text" style="max-width: 412px">
+                  Создание аэропорта «Большие Васюки» с регулярным отправлением
+                  почтовых самолётов и дирижаблей во все концы света, включая
+                  Лос-Анжелос и Мельбурн
+                </p>
+              </div>
               <img
                 class="stage__card-img"
-                src="./src/img/card/plane.png"
+                src="./src/img/card/plane.webp"
                 srcset="
-                  ./src/img/card/plane.png    1x,
-                  ./src/img/card/plane@2x.png 2x
+                  ./src/img/card/plane.webp    1x,
+                  ./src/img/card/plane@2x.webp 2x
+                "
+                alt="plane"
+              />
+            </div>
+            <!-- Stage-Mobile -->
+            <div class="stage__cards-mob">
+              <div class="stage__card">
+                <div class="stage__flex">
+                  <p class="stage__card-num">1</p>
+                  <p class="stage__card-text">
+                    Строительство железнодорожной магистрали Москва-Васюки
+                  </p>
+                </div>
+                <div class="stage__flex">
+                  <p class="stage__card-num">2</p>
+                  <p class="stage__card-text">
+                    Открытие фешенебельной гостиницы «Проходная пешка» и других
+                    небоскрёбов
+                  </p>
+                </div>
+              </div>
+              <div class="stage__card third">
+                <div class="stage__flex">
+                  <p class="stage__card-num">3</p>
+                  <p class="stage__card-text">
+                    Поднятие сельского хозяйства в радиусе на тысячу километров:
+                    производство овощей, фруктов, икры, шоколадных конфет
+                  </p>
+                </div>
+              </div>
+              <div class="stage__card">
+                <div class="stage__flex">
+                  <p class="stage__card-num">4</p>
+                  <p class="stage__card-text">
+                    Строительство дворца для турнира
+                  </p>
+                </div>
+                <div class="stage__flex">
+                  <p class="stage__card-num">5</p>
+                  <p class="stage__card-text">
+                    Размещение гаражей для гостевого автотранспорта
+                  </p>
+                </div>
+              </div>
+              <div class="stage__card">
+                <div class="stage__flex">
+                  <p class="stage__card-num">6</p>
+                  <p class="stage__card-text">
+                    Постройка сверхмощной радиостанции для передачи всему миру
+                    сенсационных результатов
+                  </p>
+                </div>
+              </div>
+              <div class="stage__card seventh">
+                <div class="stage__flex">
+                  <p class="stage__card-num">7</p>
+                  <p class="stage__card-text" style="max-width: 412px">
+                    Создание аэропорта «Большие Васюки» с регулярным
+                    отправлением почтовых самолётов и дирижаблей во все концы
+                    света, включая Лос-Анжелос и Мельбурн
+                  </p>
+                </div>
+              </div>
+              <img
+                class="stage__card-img"
+                src="./src/img/card/plane.webp"
+                srcset="
+                  ./src/img/card/plane.webp    1x,
+                  ./src/img/card/plane@2x.webp 2x
                 "
                 alt="plane"
               />
@@ -345,11 +449,13 @@
             </div>
           </div>
         </div>
-        <div class="participants__line">
+      </section>
+      <div class="media_display">
+        <div class="line">
           <img src="./src/img/running line.png" alt="running-line" />
           <img src="./src/img/running line.png" alt="running-line" />
         </div>
-      </section>
+      </div>
     </main>
     <footer class="footer">
       <div class="container">
