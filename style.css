@@ -25,8 +25,12 @@ button {
   overflow: hidden;
 }
 
-s {
+.red_line {
   text-decoration: line-through 2px solid rgb(245, 73, 50);
+}
+
+s {
+  text-decoration: line-through rgb(245, 73, 50);
 }
 
 .line {
