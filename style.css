@@ -25,7 +25,7 @@ button {
   overflow: hidden;
 }
 
-.red_line {
+s {
   text-decoration: line-through 2px solid rgb(245, 73, 50);
 }
 
@@ -304,6 +304,10 @@ th {
   line-height: 120%;
 }
 
+.stage__nav {
+  display: none;
+}
+
 .participants {
   padding: 200px 0 140px;
   position: relative;
@@ -336,7 +340,6 @@ th {
 
 .participants__btn-left,
 .participants__btn-right {
-  margin: 0 auto;
   border: 2px solid rgb(255, 255, 255);
   border: none;
   width: 44px;
@@ -438,10 +441,22 @@ th {
   line-height: 120%;
   opacity: 0.6;
 }
-
+/* MOBILE VERSION */
 @media (max-width: 431px) {
   .container {
     max-width: 335px;
+  }
+  .line {
+    display: flex;
+    animation: running-line 5s linear infinite;
+  }
+  @keyframes running-line {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
   .header__title {
     font-size: 14px;
@@ -546,7 +561,7 @@ th {
     margin-left: 0px;
   }
 
-  .stage__wrapper {
+  .stage__wrapper-mob {
     overflow: hidden;
   }
 
@@ -554,13 +569,15 @@ th {
     display: none;
   }
   .stage__cards-mob {
+    transition-duration: 1s;
     width: 1775px;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-top: 150px;
   }
   .stage__card {
+    margin: 0 20px;
     flex-direction: column;
     gap: 28px;
     padding-top: 60px;
@@ -583,5 +600,53 @@ th {
   .stage__card-text {
     max-width: 243px;
     font-size: 18px;
+  }
+  .stage__nav {
+    max-width: 210px;
+    margin: 28px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stage__position {
+    display: flex;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  .stage__btn-left,
+  .stage__btn-right {
+    margin: 0 auto;
+    border: 2px solid rgb(255, 255, 255);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgb(49, 49, 49);
+  }
+
+  .stage__btn-left:hover,
+  .stage__btn-right:hover {
+    background: rgb(251, 206, 81);
+  }
+
+  .stage__btn-disabled {
+    background: rgb(214, 214, 214);
+    margin: 0 auto;
+    border: 2px solid rgb(255, 255, 255);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .stage__indicator {
+    margin: 0 6px;
+    background: rgba(255, 255, 255, 0.4);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: none;
   }
 }
