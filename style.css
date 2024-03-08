@@ -23,7 +23,6 @@ button {
 
 .media_display {
   overflow: hidden;
-  width: 1920px;
 }
 
 .red_line {
@@ -35,6 +34,7 @@ s {
 }
 
 .line {
+  width: 1920px;
   display: flex;
   animation: running-line 15s linear infinite;
 }
@@ -474,6 +474,7 @@ th {
     font-size: 14px;
   }
   .hero {
+    overflow: hidden;
     background-image: url(./src/img/mobile.webp);
     background-size: cover;
     max-width: 430px;
