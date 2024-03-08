@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Golos Text;
+  font-family: "Golos Text";
 }
 
 button {
@@ -23,6 +23,7 @@ button {
 
 .media_display {
   overflow: hidden;
+  width: 1920px;
 }
 
 .red_line {
@@ -343,7 +344,9 @@ th {
 }
 
 .participants__btn-left,
-.participants__btn-right {
+.participants__btn-right,
+.participants__btn-Mobleft,
+.participants__btn-Mobright {
   border: 2px solid rgb(255, 255, 255);
   border: none;
   width: 44px;
@@ -353,13 +356,14 @@ th {
 }
 
 .participants__btn-left:hover,
-.participants__btn-right:hover {
+.participants__btn-right:hover,
+.participants__btn-Mobleft:hover,
+.participants__btn-Mobright:hover {
   background: rgb(251, 206, 81);
 }
 
 .participants__btn-disabled {
   background: rgb(214, 214, 214);
-  margin: 0 auto;
   border: 2px solid rgb(255, 255, 255);
   border: none;
   width: 44px;
@@ -433,6 +437,10 @@ th {
   color: rgb(255, 255, 255);
 }
 
+.participants__nav-mobile {
+  display: none;
+}
+
 .footer {
   background: rgb(233, 222, 212);
   padding: 40px 72px;
@@ -452,7 +460,7 @@ th {
   }
   .line {
     display: flex;
-    animation: running-line 5s linear infinite;
+    animation: running-line 15s linear infinite;
   }
   @keyframes running-line {
     0% {
@@ -468,6 +476,8 @@ th {
   .hero {
     background-image: url(./src/img/mobile.webp);
     background-size: cover;
+    max-width: 430px;
+    width: 100%;
     height: 812px;
   }
   .hero__content {
@@ -515,8 +525,8 @@ th {
     flex-direction: column;
   }
   .about__img {
-    width: 420px;
-    height: 374px;
+    width: 335px;
+    height: 402px;
   }
 
   .about__title {
@@ -548,7 +558,7 @@ th {
     margin-top: 24px;
   }
   .stage {
-    padding: 90px 0;
+    padding: 90px 0 60px;
   }
   .stage__text {
     position: static;
@@ -577,7 +587,6 @@ th {
     width: 1775px;
     position: relative;
     display: flex;
-    /* justify-content: space-between; */
     margin-top: 150px;
   }
   .stage__card {
@@ -647,10 +656,53 @@ th {
 
   .stage__indicator {
     margin: 0 6px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgb(217, 217, 217);
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    border: none;
+  }
+
+  .participants {
+    padding: 60px 0 100px;
+  }
+  .participants__title {
+    font-size: 36px;
+  }
+  .participants__cards {
+    width: 2170px;
+    margin: 0 20px;
+  }
+  .participants__nav {
+    display: none;
+  }
+  .participants__nav-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto 0;
+  }
+  .participants__card {
+    margin-top: 40px;
+  }
+
+  .participants__card-img {
+    width: 244px;
+    height: 244px;
+  }
+  .participants__card-btn {
+    display: flex;
+    align-items: center;
+    width: 113px;
+    height: 35px;
+  }
+
+  .participants__btn-Mobleft,
+  .participants__btn-Mobright {
+    width: 36px;
+    height: 36px;
+  }
+  .participants__btn-disabled {
+    width: 36px;
+    height: 36px;
   }
 }
