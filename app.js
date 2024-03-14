@@ -54,7 +54,7 @@ function showIndicator() {
 }
 
 const renderIndicator = (indicator) => {
-  for (let i = 0; i < 5 - 1; i++) {
+  for (let i = 0; i < 5; i++) {
     const list = showIndicator(indicator);
     stagePositionNode.append(list);
   }

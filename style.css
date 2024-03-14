@@ -5,6 +5,10 @@
   font-family: "Golos Text";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 button {
   cursor: pointer;
 }
@@ -128,7 +132,7 @@ s {
 }
 
 .hero__btn-left {
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255) !important;
   background: rgb(31, 31, 31);
 }
 
@@ -156,6 +160,7 @@ s {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .donut__text {
@@ -452,6 +457,40 @@ th {
   font-weight: 400;
   line-height: 120%;
   opacity: 0.6;
+}
+
+@media (max-width: 1280px) {
+  .stage__card-img {
+    max-width: 300px;
+    width: 100%;
+  }
+  .stage__cards {
+    grid-template-areas:
+      ". ."
+      ". ."
+      ". third"
+      "seventh seventh";
+  }
+
+  .about__content {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 680px) {
+  .stage__card-img {
+    display: none;
+  }
+  .stage__cards {
+    grid-template-areas:
+      "."
+      "."
+      "third"
+      "."
+      "."
+      "."
+      "seventh";
+  }
 }
 /* MOBILE VERSION */
 @media (max-width: 431px) {
