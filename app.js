@@ -29,17 +29,15 @@ function moveCardsToLeft() {
   rightBtnNode.disabled = false;
 }
 
-let moveRight = true;
-
-setInterval(() => {
-  if (moveRight) {
-    moveCardsToRight();
-  } else {
-    moveCardsToLeft();
-  }
-  moveRight = !moveRight;
-}, 4000);
-
+if (window.innerWidth > 432) {
+  setInterval(() => {
+    if (moveRight) {
+      moveCardsToRight();
+    } else {
+      moveCardsToLeft();
+    }
+  }, 4000);
+}
 positionNode.innerHTML = count;
 
 function prevSlide() {
@@ -174,6 +172,39 @@ const leftBtnMobileNode = document.querySelector(".participants__btn-Mobleft");
 const rightBtnMobileNode = document.querySelector(
   ".participants__btn-Mobright"
 );
+
+let countParticipants = 1;
+let positionParticipants = 0;
+
+function moveCardsToRightMobile() {
+  cardsNode.style.transform = `translateX(-${positionParticipants}px)`;
+  countParticipants += 1;
+  positionMobileNode.innerHTML = countParticipants;
+  leftBtnMobileNode.disabled = false;
+  leftBtnMobileNode.className = "participants__btn-Mobleft";
+}
+
+function moveCardsToLeftMobile() {
+  cardsNode.style.transform = `translateX(${0}%)`;
+  positionMobileNode.innerHTML = 1;
+  leftBtnMobileNode.className = "participants__btn-disabled";
+  leftBtnMobileNode.disabled = true;
+  rightBtnMobileNode.className = "participants__btn-Mobright";
+  rightBtnMobileNode.disabled = false;
+}
+
+if (window.innerWidth < 432) {
+  positionMobileNode.innerHTML = countParticipants;
+  setInterval(() => {
+    if (countParticipants !== 6) {
+      positionParticipants += 380;
+      moveCardsToRightMobile();
+    } else {
+      moveCardsToLeftMobile();
+    }
+    moveRight = !moveRight;
+  }, 4000);
+}
 
 let countMobile = 1;
 let positionMobile = 0;
