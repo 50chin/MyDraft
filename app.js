@@ -11,6 +11,35 @@ let position = 0;
 let postionCard = 0;
 let positionIndicator = 0;
 
+function moveCardsToRight() {
+  cardsNode.style.transform = `translateX(-${50}%)`;
+  positionNode.innerHTML = 6;
+  leftBtnNode.disabled = false;
+  leftBtnNode.className = "participants__btn-left";
+  rightBtnNode.className = "participants__btn-disabled";
+  rightBtnNode.disabled = true;
+}
+
+function moveCardsToLeft() {
+  cardsNode.style.transform = `translateX(${0}%)`;
+  positionNode.innerHTML = 3;
+  leftBtnNode.className = "participants__btn-disabled";
+  leftBtnNode.disabled = true;
+  rightBtnNode.className = "participants__btn-right";
+  rightBtnNode.disabled = false;
+}
+
+let moveRight = true;
+
+setInterval(() => {
+  if (moveRight) {
+    moveCardsToRight();
+  } else {
+    moveCardsToLeft();
+  }
+  moveRight = !moveRight;
+}, 4000);
+
 positionNode.innerHTML = count;
 
 function prevSlide() {
